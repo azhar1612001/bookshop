@@ -1,5 +1,6 @@
 package com.azhar.bookshop.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
@@ -7,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Document(collection = "Author")
 public class Author {
+    @Id
     @NotNull
     private int id;
     @NotBlank

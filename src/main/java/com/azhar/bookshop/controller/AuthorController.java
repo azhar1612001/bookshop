@@ -6,6 +6,8 @@ import com.azhar.bookshop.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -13,7 +15,7 @@ public class AuthorController {
     @Autowired
     AuthorService authService;
     @PostMapping("/author")
-    public ResponseEntity<?> addAuthor(@RequestBody Author author){
+    public ResponseEntity<?> addAuthor(@Valid @RequestBody Author author){
         Author save = authService.addAuthor(author);
         return ResponseEntity.ok(save);
     }

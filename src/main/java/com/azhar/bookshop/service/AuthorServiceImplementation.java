@@ -18,7 +18,7 @@ public class AuthorServiceImplementation implements AuthorService{
     BookRepository bookRepo;
     @Override
     public Author addAuthor(Author author){
-        return authRepo.save(author);
+        return authRepo.insert(author);
     }
     @Override
     public List<Book> findByAuthor(String name){

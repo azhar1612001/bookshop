@@ -23,7 +23,7 @@ public class BookServiceImplementation implements BookService{
     }
     @Override
     public Book addBook(Book book){
-        return bookRepo.save(book);
+        return bookRepo.insert(book);
     }
     @Override
     public List<Book> findByGenre(String genre){
